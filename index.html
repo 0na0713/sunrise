@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <link href=""rel="stylesheet"/>
+    <title>sun</title>
+
+    <script
+         src=""
+         crossorigin=""
+       ></script>
+       <script src="main.js" defer></script>
+
+    <style>
+        * {margin: 0; padding: 0;}
+        body {background-color: #F0EDEC;}
+        #wrap {width: 1200px; margin: 0 auto;}
+        .header {width: 100%; height: 300px; background: #F0EDEC;
+        background-image: url(./img/a2.png);
+        background-repeat: no-repeat;
+        background-size: cover;}
+        .article1 {float: left; width: 100%; height: 700px; background: #F0EDEC;}
+        .article2 {float: left; width: 100%; height: 1500px; background: #F0EDEC;}
+        .article3 {float: left; width: 100%; height: 1600px; background: #F0EDEC;}
+        .article4 {float: left; width: 100%; height: 5600px;}
+        .article5 {float: left; width: 100%; height: 1050px;}
+        .footer {clear: both; width: 100%; height: 35px; background: #C23A28;}
+
+        #a1 {
+          border: 1px solid red;
+           float: left;
+           width:30%;
+           box-sizing: border-box;
+        }
+        #a2 {
+          border: 1px solid green;
+        float: left;
+        margin-left: 5%;
+        width:30%;
+        box-sizing: border-box;
+        }
+        #a3 {
+          border: 1px solid blue;
+    float: right;
+    width:30%;
+    box-sizing: border-box;
+        }
+
+        #tx {text-align: right; font-size: 15px; margin-top: 40%; color: #353535;}
+        #tx2 {text-align: left; font-size: 15px; margin-top: 45%; color: #353535;}
+        #tx3 {text-align: center; font-size: 50px; font-weight: bold; padding-top: 225px; color: #353535;}
+        #tx4 {color: white; text-align: center; font-size: 30px; font-weight: bold; padding-top: 120px;}
+        #tx5 {color: #EAEAEA;text-align: center; font-size: 15px;}
+        #tx6 {color: white;text-align: center; font-size: 30px; font-weight: bold; padding-top: 135px;}
+        #tx7 {color: #EAEAEA;text-align: center; font-size: 15px;}
+        #tx8 {text-align: center; font-size: 15px; padding-top: 38%; color: #353535;}
+        #tx9 {text-align: center; font-size: 15px; padding-top: 35%; width: 80%; margin: auto; color: #353535;}
+        #tx10 {text-align: left; font-size: 15px; padding-top: 5%; width: 90%; margin-left: 3%; color: #353535;}
+        #tx11 {text-align: right; font-size: 15px; padding-top: 5%; width: 90%; color: #353535;}
+
+
+
+        #w8 p {font-size: 35px; text-align: center; margin-top: 40%; color: white;}
+        #tx10 p {font-size: 35px; font-weight: bold;color: #353535;}
+        #tx11 p {font-size: 35px; font-weight: bold;color: #353535;}
+        .one p {font-size: 35px; text-align: center; margin-top: 38%; color:white;s}
+        #dd {font-size: 20px; text-align: center; color: #FFA7A7;}
+        #ddd {font-size: 15px; text-align: center; color: #FFA7A7;}
+        #aa {font-size: 30px; padding-left: 5%; color:white; text-align: center;}
+
+
+        @media (max-width: 1240px){
+            #wrap {width: 100%;}
+            .article1 {height: 700px;}
+            .article2 {height: 1500px;}
+            .article3 {width: 100%; height: 1500px;}
+            .one {
+                     border: 1px solid #F0EDEC;
+                     background-color: #D86050;
+                     width: 350px;
+                     height:350px;
+                     border-radius: 50%;
+                     margin-top: 5%;
+                     margin-left: 32%;
+                    }
+        }
+
+        @media (max-width: 768px){
+            .article1 {width: 100%; height: 600px;}
+            .article2 {width: 100%; height: 2500px;}
+            .article3 {width: 100%; height: 1500px;}
+            #aa {font-size: 30px; padding-right: 15%; color:white; text-align: center;}
+            #tx4 {text-align: center; font-size: 25px; padding-top: 60px;}
+            #tx5 {text-align: center; font-size: 13px;}
+            #tx6 {text-align: center; font-size: 25px; padding-top: 100px;}
+            #tx7 {text-align: center; font-size: 13px;}
+
+    }
+
+        @media (max-width: 480px){
+            .article1 {width: 100%;}
+            .article2 {width: 100%;}
+            #aa {font-size: 30px; padding-right: 15%; color:white; text-align: center;}
+        }
+
+        .accordion {margin-top:5%;margin-left:50%;transform:translateX(-50%);width:500px;}
+        input[id*="answer"] {display:none;}
+        input[id*="answer"] + label {display:block;padding:20px;border:1px solid #F0EDEC;border-bottom:0;color:#fff;font-weight:900;background:#E6DFDD;cursor:pointer;}
+        input[id*="answer"] + label + div {max-height:0;transition: all .35s;overflow:hidden;background:white;font-size:11px;}
+        input[id*="answer"] + label + div p {display:inline-block;padding:20px;}
+        input[id*="answer"]:checked + label + div {max-height:100px;}
+        input[id*="answer"]:checked + label em {background-position:0 -30px;}
+    </style>
+
+</head>
+<body>
+    <div id="wrap">
+        <header class="header">
+
+      <nav class="navbar">
+        <div class="navbar__logo">
+              <div id="tt"> <i class="fas fa-ghost">SUNRISE</i></div>
+             </div>
+
+     <ul class="navbar__menu">
+       <li><a href="#so">자원고갈</a></li>
+       <li><a href="#su">인공태양</a></li>
+       <li><a href="#ot">다른나라</a></li>
+     </ul>
+
+     <a href="#" class="navbar__toggleBtn">
+       <img src="./img/ham.png" width="30px" height="30px">
+     </a>
+   </nav>
+
+        </header>
+
+        <section class="article1">
+
+          <div class="slidebox">
+  	<input type="radio" name="slide" id="slide01" checked>
+  	<input type="radio" name="slide" id="slide02">
+  	<input type="radio" name="slide" id="slide03">
+
+  	<ul class="slidelist">
+  		<li class="slideitem">
+  			<div>
+  				<label for="slide03" class="left"></label>
+  				<label for="slide02" class="right"></label>
+  				<a><img src="./img/q.png"></a>
+  			</div>
+  		</li>
+  		<li class="slideitem">
+  			<div>
+  				<label for="slide01" class="left"></label>
+  				<label for="slide03" class="right"></label>
+  				<a><img src="./img/q2.png"></a>
+  			</div>
+  		</li>
+  		<li class="slideitem">
+  			<div>
+  				<label for="slide02" class="left"></label>
+  				<label for="slide01" class="right"></label>
+  				<a><img src="./img/q3.png"></a>
+  			</div>
+  		</li>
+  	</ul>
+
+  </div>
+
+        </section>
+        <a style="display:scroll; position:fixed; bottom:10px; right:20px;" href="#tt" title=Top>
+             <img src="./img/tt.png" width="20px"></p>
+        </a>
+
+        <section class="article2">
+        <div id="so"><h1> 자원고갈 </h1></div>
+        <div class="a1">
+
+        <div id="q1">
+        <div id="tx">
+          세계인구의 연간 에너지 소비량은 303만 TOE을 이용한다.
+          광물, 금속 및 화석 자원은 전 세계적으로 한정된 양만 사용할 수 있으며
+          재생되지 않는다. 증가된 자원 소비량은 심각하고 부분적으로 회복할 수 없는
+          환경 훼손을 야기할뿐 아니라 시장에서 그 가격을 높이는 요인으로도 작용한다.
+          이런 이유에서 글로벌 경쟁력을 확보하기 위해 특정 자원의 지속가능한
+          효율적 사용 및 대체 에너지 및 재료의 사용에 대한 중요성이 점점 더 부각되고 있다.
+          한국의 에너지소비량의 현황을 살펴보면 석유, 석탄, LNG, 원자력 순으로 사용되고 있다.
+          이러한 현황을 보았을 때 각각의 고갈 상황, 즉 가채연수는 석유는 향후40년을 예상하고
+          석탄은 향후200년을 예상하며 천연가스는 향후 60~70년을 예상한다.
+        </div>
+        </div>
+
+        <div id="q2">
+        <img src="./img/q4.png" width="100%" height="400px" align="center">
+        </div>
+
+        </div>
+
+        <div class="a2">
+
+        <div id="q3">
+        <img src="./img/q5.png" width="100%" height="400px" align="center">
+        </div>
+
+        <div id="q4">
+          <div id="tx2">
+            한국은 에너지원별 발전량에서 석탄 및 석유, 천연가스 등 화석연료에 의한
+            발전량이 제일 높다. 그리고 핵발전이 그 뒤를 잇고 있으며 친환경에너지로
+            주목받고 있는 신,재생에너지는 매우 미비한 수준이다.
+            한국뿐 아니라 세계 에너지 소비량의 약 80%는 화석연료를 이용한다.
+            이러한 화석연료를 에너지로 이용할 시 이산화탄소를 배출하게 되는데
+            이는 지구온난화에 큰 영향을 미친다. 현재 한국은 이산화 탄소 배출량도 세계
+            10위권 안에 속하며 특히 OECD 국가 중 온실가스 배출 증가율 세계 1위이며
+            이는 세계 평균의 3배 수준에 해당한다.
+        </div>
+        </div>
+
+        </div>
+
+        <div class="a3">
+
+        <div id="q5">
+          <br>
+          <div id="tx">
+            한국은 에너지의 대외의존도가 높은 편이다.
+            한국의 총 에너지의 95.8%(2015년 기준)를 해외 수입에 의존하고 있으며 해마다
+            수입이 늘어나는 추세이었지만 최근에 들어 92%로 떨어졌다.
+            한국의 총 수입액에서 에너지 수입액이 차지하는 비중은 17.1%로 집계 되었고
+            이런 비중은 1995년 5월(16.1%) 이후 약 21년만에 가장 낮은 수준으로 확인되었다.
+            지난해 에너지 수입액 비중은 평균 25.2%로 전체 수입액의 4분의 1을 에너지가 차지했다.
+            올해 들어서도 1월,2월 기준 각각 28.5%와 29로 높아졌다가 3월부터 떨어졌다.
+          </div>
+        </div>
+
+        <div id="q6">
+         <img src="./img/q6.png" width="100%" height="400px" align="center">
+        </div>
+
+        </div>
+        </section>
+
+
+        <section class="article3">
+
+         <div class="a4">
+       <div id="tx3">
+          지구온난화
+       </div>
+        </div>
+      <br><br><br><br>
+        <div id="q7">
+          <div id="tx4">
+             현재 이산화탄소 농도 <br> 1.5배 수준에 도달
+          </div>
+          <br>
+          <div id="tx5">
+            화석연료를 계속 사용할 경우 2060년 <br> 이산화탄소 배출량이 산업화 이전 대비 2배에 이룰 수 있다.
+          </div>
+        </div>
+
+        <div id="q8">
+          <div id="tx6">
+             해수면의 상승
+          </div>
+          <br>
+          <div id="tx7">
+          한국 주변 해수면 지속적으로 상승. <br> 지구 해양 평균보다 약 2~3배 높다.
+          </div>
+        </div>
+
+        <div id="q9">
+          <div id="tx6">
+             온도 상승
+          </div>
+          <br>
+          <div id="tx7">
+          지구 온난화 범위가 1.5~4.5도에 이룰 수 있다고 예상 <br> 4.5도까지 상승할 시 기상이변 발생 확률 상승.
+          </div>
+        </div>
+
+        <div id="q10">
+          <div id="tx6">
+             에너지 전환 정책
+          </div>
+          <br>
+          <div id="tx7">
+          재생에너지 확대 및 에너지효율 개선 <br> 에너지 신산업분야 일자리 창출 등 경제적 효과 기대.
+          </div>
+        </div>
+
+       </section>
+     <section class="article4">
+     <h2> 에너지 전환 정책 </h2>
+       <div class="a5">
+         <div id="bb">
+          <div id="tx8">
+             석탄발전의 축소
+            </div>
+         </div>
+
+        <div id="bb">
+           <div id="tx8">
+              에너지 세제 개편
+             </div>
+         </div>
+
+      <div id="bb">
+           <div id="tx8">
+              온실가스 감축강화
+             </div>
+         </div>
+
+         <div id="bb">
+           <div id="tx8">
+              재생에너지 확대
+             </div>
+         </div>
+
+         <div id="bb">
+           <div id="tx8">
+               탈원전
+             </div>
+         </div>
+       </div>
+       <div class="updown">
+       </div>
+
+       <div class="one">
+         <p>
+          인공태양
+         </p>
+
+       <div id="dd">
+        신재생에너지
+        </div>
+        </div>
+      <br><br><br><br><br><br><br><br><br><br>
+       <div id="su"><h1> 인공태양 </h1></div>
+       <div class="a1">
+       <div id="q1">
+       <div id="tx">
+        핵융합 기술을 활용한 "인공태양" 기술이 차세대 에너지로 주목받기 시작했다.
+        태양은 핵융합을 통해 막대한 에너지를 생산하고, 지구는 이를 토대로 생태계를 유지한다.
+        여기서 핵융합이란 가벼운 핵들이 결합해 무거운 핵이 되는 것을 의미한다.
+        태양은 핵융합을 이용해 초당 3.9×1028J에 해당하는 에너지를 생산한다.
+        이는 핵폭탄 약 1000조개에 달하는 수준이며 석유 8T과 맞먹는 에너지이기도 하다.
+        인공태양은 이러한 태양의 에너지원리를 이용한다.
+        인공태양이 내뿜는 고효율 열에너지로 증기 터빈을 돌리면
+        무하한 전기에너지를 얻을 수 있다. 이러한 핵융합 에너지는 물을 반응원료로
+        사용하기 때문에 거의 무한하다고 예상이 된다.
+       </div>
+       </div>
+
+       <div id="q16">
+       <img src="./img/q10.png" width="100%" height="400px" align="center">
+       </div>
+
+       </div>
+
+       <div class="a2">
+
+       <div id="q15">
+       <img src="./img/q11.png" width="100%" height="400px" align="center">
+       </div>
+
+       <div id="q4">
+         <div id="tx2">
+        인공태양은 핵융합반응으로 에너지를 만든다.
+        지구에서 핵융합 반응을 일으키기 위해서는 1,500만도보다 7배 뜨거운 1억도
+        이상의 초고온 플라즈마 환경을 유지가 필요하다.
+        이유는 태양과 지구의 질량 차이에 있다. 태양은 지구의 33만 2950배의 질량을 가진
+        플라즈마 덩어리다. 따라서 지구에서 핵융합 반응을 이끌어 내려면 태양 중심부와
+        동일한 조건을 갖춰야한다는 전제가 성립한다.또한 원료도 일반 수소보다
+        더 낮은 온도에서 활발하게 작용하는 중수소, 삼중수소를 이용해야한다.
+
+
+       </div>
+       </div>
+
+       </div>
+
+       <div class="a3">
+
+       <div id="q5">
+      <div id="tx">
+         인공태양을 만들기 위해 모인 산업기구인 ITER과 그에 속한 KSTAR.
+         ITER 프로젝트는 상용화 가능한 최소 핵융합 효율의 확실한 달성을 목표로
+         하는 국제 공동 핵융합 실험으로서 미국, 러시아, 유럽연합, 중국, 일본, 대한민국 등
+         총 34국이 참여한는 국제연구개발사업이다. 현재 ITER의 목표는 500와트의 전력을 생산해
+         에너지 회수율을 10배까지 올리는 것을 목표로 하고 있다.
+         한국도 ITER에 소속되어 연구를 진행중이며 한국의 핵융합 연구를 KSTAR라고 부른다.
+         KSTAR는 대한민국이 독자개발에 성공한 한국형 핵융합 연구로로 한국핵융합에너지연구원에
+         위치하고 있다. 현재 목표는 1억도가 넘는 초고온의 플라즈마를 5분동안 유지하는 것이
+         목표이다.
+
+       </div>
+       </div>
+
+       <div id="q14">
+       <img src="./img/q12.png" width="100%" height="400px" align="center">
+       </div>
+
+       </div>
+
+       <div id="w1">
+         <img src="./img/a3.png" width="100%" >
+       </div>
+
+       <div class="bbb">
+       <div id="w2">
+        원자력 발전의 0.04%에 불과한 소량의 방사능만 발생해 폐기물을 10년에서
+        길어도 100년 이내에는 모두 재활용이 가능하다.
+        핵융합 장치에 균열 등의 손상 발생 시 내부의 진공 상태에 있는 수소 에너지들이
+         <br> 모두 빛으로 변하면서 열을 모두 흡수함으로 기계 손상 시에도 안전하다.
+
+       </div>
+
+       <div id="w3">
+
+        원자력 발전과 달리 방사성 물질이나 온실가스가 <br>
+        나오지 않아 친환경 기술로 여겨진다.<br>
+        자원고갈 염려가 없다.<br>
+        바닷물 1L로 휘발유 300L에 <br> 달하는 에너지를 생산가능하다.<br>
+       </div>
+     </div>
+
+
+
+       <h1> 인공태양의 에너지 생성과정 </h1>
+         <br><br><br><br><br>
+       <div id="w4">
+         <div id="tx9">
+         인공태양을 만드는 방법 중 현재 사용하고
+         있는 방법은 "토카막"이다.
+         토카막은 코일로 만든 자석에서 발생하는
+         자기장을 이용해 플라즈마를
+         가두는 방을 의미한다.
+       </div>
+       </div>
+       <div id="w5">
+         <div id="tx9">
+         플라즈마를 구속하는 D자 모양의 초전도 자석으로 자기장을 만들어
+         플라즈마가 도넛 모양의 진공용기 내에서 안정적 상태를 유지하도록 제어한다.
+        </div>
+       </div>
+
+       <div id="w6">
+        <div id="tx9">
+         태양이 빛을 내는 원리를 이용한 것이며 중수소와
+         삼중수소를 수억도의 플라스마 상태로 가열하고
+         플라스마를 약 1억도 이상으로 가열해 핵융합반응을 일으킨다.
+        </div>
+        </div>
+
+       <div id="w7">
+       <div id="tx9">
+       핵융합반응으로 발생되는 질량결손에 의해 핵융합에너지가 중성자 운동에너지로
+       나타나면서 이 과정에서 막대한 빛에너지가 생성된다.
+       </div>
+       </div>
+
+       <div id="w8">
+         <p>
+          블랑켓 기술
+        </p><br>
+        <div id="ddd">
+        담요라는 뜻을 지닌 핵융합로의 필수 부품으로 <br>
+        이름처럼 핵융합로 전체를 감싸고 있다.
+        </div>
+        </div>
+
+       <div id="w9">
+       <div id="tx9">
+        <h2>에너지 변환</h2> <br>
+        에너지 변환은 핵융합로 내부에서 수소핵의 핵융합 반응을 통해 헬륨과 중성자가 만들어져
+        중성자들을 수집하여 중성자가 지닌 운동에너지를 열에너지로 바꾸어주는 역할을 한다.
+        이렇게 생겨난 열에너지가 물을 데워 증기를 발생시키고 터빈을 돌려 전기에너지 발생하도록 한다.
+
+
+       </div>
+       </div>
+
+       <div id="w10">
+       <div id="tx9">
+       <h2>삼중수소 자체 생산</h2> <br>
+       삼중수소는 자연상태에서 얻기 어려워 핵융합로 내부의
+       블랑켓을 통해 생산하여 블랑켓의 내부에는 존재하는 리튬벽은 핵융합 반응을 통해
+       수집한 중성자와 반응하여 삼중수소 생산하게 해준다.
+       </div>
+       </div>
+       </section>
+
+       <section class="article5">
+       <h1> 인공태양의 어려움 </h1>
+
+       <div id="tx10">
+       <p>온도</p> <br>
+       세상에서 가장 차가운 그릇에 가장 뜨거운 물질을 가두는 것으로 비유한다.<br>
+       고온의 플라즈마를 진공 공간 내에 만들어야 하는 것과 불안정한 플라즈마를
+       유지하기 위해 외부온도를 영하 273도로 유지해야한다는 것에서 어려움이 있다.
+       </div>
+
+       <div id="tx11">
+       <p>플라즈마의 불안정화</p> <br>
+       핵융합로에 갇혀 있는 초고온 플라스마는 바깥 부분과의 큰 압력·온도 차로 불안정한 특성을 지닌다.<br>
+       토카막형 플라즈마 경계면의 미세한 압력 변화 때문에 플라즈마가 안정적으로
+       자기장을 따라 움직이지 않고 요동치기에 유지에 어려움이 있다.
+       </div>
+
+      <br><br><br><br><br><br><br><br>
+       <div id="ot"><h1> 다른나라의 인공태양 </h1></div>
+
+       <div class="accordion">
+       <input type="radio" name="accordion" id="answer01">
+       	<label for="answer01">EU</label>
+       	<div><p>
+        27개 가입국이 유럽원자력공동체 조약에 따라 핵융합 연구개발을 공동으로 수행한다. <br>
+        2050년대까지 핵융합 상용화를 달성하기 위한 'EU 핵융합에너지 개발 로드맵'을 발표한다. <br>
+        중수소, 삼중수소, 핵융합 반응 실험, 로봇 팔을 이용한 원격 작업 등에 강점을 보인다.
+        </p></div>
+
+       	<input type="radio" name="accordion" id="answer02">
+       	<label for="answer02">미국</label>
+       	<div><p>
+         에너지부 산하에 있는 과학국과 국가핵안보국에서 관련 연구 담당한다.
+         세계 핵융합 기술개발의 거의 모든 분야에서 가장 높은 수준의 역량을 보유하고 있는 것으로 평가한다.<br>
+         가둠 핵융합의 연구결과와 토카막 장치 연구결과 비교하여 둘 중 하나를 택하여 집중 추진중이다.
+        </p></div>
+       	<input type="radio" name="accordion" id="answer03">
+       	<label for="answer03">러시아</label>
+       	<div><p>
+        구소련의 토카막 장치에서의 연구성과는 전 세계 대부분의 핵융합 연구가 토카막 중심으로 수행하게 하는 중요계기었다.<br>
+        예산부족으로 토카막 장치 연구는 중단, 개별 연구소 차원에서 핵융합 관련 연구 진행중이다. <br>
+        </p></div>
+       	<input type="radio" name="accordion" id="answer04">
+       	<label for="answer04">일본</label>
+       	<div><p>
+          자기 가둠 핵융합과 관성 가둠 핵융합을 동시에 연구 개발중이다. <br>
+          미국, EU와 함께 세계에서 핵융합 기술수준이 가장 높은 국가로 평가받았다.<br>
+        </p></div>
+       </div>
+
+
+
+
+
+
+
+
+
+
+
+     </section>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
